@@ -54,6 +54,7 @@ struct ContentView: View {
         }
     }
     
+    // カメラの使用許可を確認
     func requestCameraAccess() {
         AVCaptureDevice.requestAccess(for: .video) { granted in
             DispatchQueue.main.async {

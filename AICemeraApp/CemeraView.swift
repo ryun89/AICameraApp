@@ -29,6 +29,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         setupConfidenceLabel()
     }
     
+    // カメラのセットアップ
     func setupCamera() {
         captureSession = AVCaptureSession()
         guard let captureSession = captureSession else { return }
@@ -68,10 +69,12 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         captureSession.startRunning()
     }
     
+    // 内カメラ・外カメラの切り替え
     @objc func switchCamera() {
         reverseCameraPosition()
     }
     
+    // カメラの切り替え
     func reverseCameraPosition() {
         // 新しいカメラポジションを設定
         let newCameraPosition: AVCaptureDevice.Position = self.currentCamera == .front ? .back : .front
@@ -114,6 +117,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         })
     }
     
+    // 確度ラベルのセットアップ
     func setupConfidenceLabel() {
         confidenceLabel = UILabel()
         confidenceLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -129,11 +133,11 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         ])
     }
 
-    
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         detectSmile(in: sampleBuffer)
     }
     
+    // 笑顔かどうかを分類し、笑顔の場合撮影
     func detectSmile(in sampleBuffer: CMSampleBuffer) {
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
@@ -157,12 +161,13 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         try? handler.perform([request])
     }
     
-    
+    // 写真を撮影
     func capturePhoto() {
         let settings = AVCapturePhotoSettings()
         photoOutput.capturePhoto(with: settings, delegate: self)
     }
     
+    // 写真がキャプチャされ、その処理が完了した後に呼び出される
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let error = error {
             print("Error capturing photo: \(error)")
