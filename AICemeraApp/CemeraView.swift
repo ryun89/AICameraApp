@@ -149,7 +149,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
                         let labelText = "\(result.identifier): \(String(format: "%.2f", result.confidence * 100))%"
                         self.confidenceLabel.text = labelText
                     }
-                    if result.identifier == "smile" && result.confidence > 0.95 && self.canTakePhoto {
+                    if result.identifier == "smile" && result.confidence > 0.99 && self.canTakePhoto {
                         self.canTakePhoto = false
                         self.capturePhoto()
                     }
