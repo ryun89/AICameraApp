@@ -22,12 +22,12 @@ AICameraAppは、カメラを使用して笑顔を検出し、その瞬間を自
 
 1. このリポジトリをクローンします：
     ```bash
-    git clone https://github.com/yourusername/smile-capture-camera-app.git
+    git clone https://github.com/yourusername/AICameraApp.git
     ```
 2. Xcodeでプロジェクトを開きます：
     ```bash
-    cd smile-capture-camera-app
-    open SmileCaptureCameraApp.xcodeproj
+    cd ai_camera_app
+    open AICameraApp.xcodeproj
     ```
 3. 必要な依存関係をインストールします。
 4. アプリをビルドし、実機またはシミュレータで実行します。
