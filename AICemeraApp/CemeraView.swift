@@ -19,7 +19,6 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     private var currentCamera: AVCaptureDevice.Position = .front
     private var videoDevice: AVCaptureDevice?
     private let photoOutput = AVCapturePhotoOutput()
-    private var smileDetected = false
     private var canTakePhoto = true
     private var confidenceLabel: UILabel!
     
@@ -141,17 +140,18 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     func detectSmile(in sampleBuffer: CMSampleBuffer) {
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
-        let request = VNCoreMLRequest(model: try! VNCoreMLModel(for: SmileClassifier().model)) { request, error in
+        let request = VNCoreMLRequest(model: try! VNCoreMLModel(for: SmileClassifier_0521().model)) { request, error in
             if let results = request.results as? [VNClassificationObservation] {
                 for result in results {
                     // クラスと確度ラベルを更新
-                    DispatchQueue.main.async {
+                    Task { @MainActor in
                         let labelText = "\(result.identifier): \(String(format: "%.2f", result.confidence * 100))%"
                         self.confidenceLabel.text = labelText
                     }
-                    if result.identifier == "smile" && result.confidence > 0.99 && self.canTakePhoto {
-                        self.canTakePhoto = false
-                        self.capturePhoto()
+                    if result.identifier == "smile" && result.confidence >= 0.99 && self.canTakePhoto {
+                        Task {
+                            await self.handleSmileDetect()
+                        }
                     }
                 }
             }
@@ -159,6 +159,17 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         
         let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:])
         try? handler.perform([request])
+    }
+    
+    // 笑顔認識を操作する
+    @MainActor
+    func handleSmileDetect() async {
+        self.canTakePhoto = false // 撮影を一時無効化
+        self.capturePhoto() // 写真を保存する
+        
+        // 6秒のクールダウン
+        try? await Task.sleep(nanoseconds: 5 * 1_000_000_000)
+        self.canTakePhoto = true  // 5秒後に再度写真撮影を有効化
     }
     
     // 写真を撮影
@@ -171,24 +182,16 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let error = error {
             print("Error capturing photo: \(error)")
-            self.smileDetected = false
             self.canTakePhoto = true
             return
         }
         
         guard let imageData = photo.fileDataRepresentation() else {
-            self.smileDetected = false
             self.canTakePhoto = true
             return
         }
         
         let image = UIImage(data: imageData)
         UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
-        self.smileDetected = false
-        
-        // 5秒間の遅延を設定
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            self.canTakePhoto = true
-        }
     }
 }
