@@ -22,7 +22,7 @@ AICameraAppは、カメラを使用して笑顔を検出し、その瞬間を自
 
 1. このリポジトリをクローンします：
     ```bash
-    git clone https://github.com/yourusername/AICameraApp.git
+    git clone https://github.com/ryun89/AICameraApp.git
     ```
 2. Xcodeでプロジェクトを開きます：
     ```bash
@@ -37,4 +37,4 @@ AICameraAppは、カメラを使用して笑顔を検出し、その瞬間を自
 2. デバイスのカメラに顔を向けます。
 3. 笑顔を検出すると、自動的に写真が撮影されます。
 4. 撮影後、5秒間は再度笑顔を検出しても撮影されません。
-5. 右上のボタンをタップして、前面および背面カメラを切り替えることができます。
+5. 左上のボタンをタップして、前面および背面カメラを切り替えることができます。
