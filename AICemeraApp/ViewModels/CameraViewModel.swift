@@ -53,7 +53,7 @@ class CameraViewModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampl
             captureSession?.removeInput(input)
         }
         // 新しいカメラポジションを設定
-        let newCameraPosition: AVCaptureDevice.Position = reverseCameraPosition(currentCamera: currentCamera)
+        let newCameraPosition: AVCaptureDevice.Position = currentCamera == .front ? .back : .front
         self.currentCamera = newCameraPosition
         let newVideoCaptureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: self.currentCamera) ?? AVCaptureDevice.default(for: .video)
         guard let newVideoDevice = newVideoCaptureDevice, let newVideoInput = try? AVCaptureDeviceInput(device: newVideoDevice) else { return }
@@ -64,16 +64,6 @@ class CameraViewModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampl
             
         self.captureSession?.commitConfiguration()
         }
-    
-    // カメラの位置を反転します
-    func reverseCameraPosition(currentCamera: AVCaptureDevice.Position) -> AVCaptureDevice.Position {
-        if currentCamera == .front {
-            return .back
-        }
-        else {
-            return .front
-        }
-    }
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         detectSmile(in: sampleBuffer)
