@@ -1,16 +1,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = CameraViewModel()
+    @StateObject private var cameraViewModel = CameraViewModel()
     
     var body: some View {
         ZStack {
-            CameraView(viewModel: viewModel)
+            CameraView(viewModel: cameraViewModel)
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 HStack {
                     Button(action: {
-                        viewModel.switchCamera()
+                        cameraViewModel.switchCamera()
                     }) {
                         Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
                             .font(.system(size: 30))
@@ -22,7 +22,7 @@ struct ContentView: View {
                 Spacer()
                 HStack{
                     Spacer()
-                    Text(viewModel.confidenceLabel)
+                    Text(cameraViewModel.confidenceLabel)
                         .font(.largeTitle)
                         .padding()
                 }
