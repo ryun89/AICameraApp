@@ -4,18 +4,29 @@ struct ContentView: View {
     @StateObject private var viewModel = CameraViewModel()
     
     var body: some View {
-        VStack {
+        ZStack {
             CameraView(viewModel: viewModel)
                 .edgesIgnoringSafeArea(.all)
-            Text(viewModel.confidenceLabel)
-                .font(.largeTitle)
-                .padding()
-            Button(action: {
-                viewModel.switchCamera()
-            }) {
-                Text("Switch Camera")
+            VStack {
+                HStack {
+                    Button(action: {
+                        viewModel.switchCamera()
+                    }) {
+                        Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
+                            .font(.system(size: 30))
+                            .foregroundColor(.black)
+                    }
+                    .padding()
+                    Spacer()
+                }
+                Spacer()
+                HStack{
+                    Spacer()
+                    Text(viewModel.confidenceLabel)
+                        .font(.largeTitle)
+                        .padding()
+                }
             }
-            .padding()
         }
     }
 }

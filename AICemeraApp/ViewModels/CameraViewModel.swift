@@ -111,7 +111,7 @@ class CameraViewModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampl
         self.canTakePhoto = false // 撮影を一時無効化
         self.capturePhoto() // 写真を保存する
         
-        // 6秒のクールダウン
+        // 5秒のクールダウン
         try? await Task.sleep(nanoseconds: 5 * 1_000_000_000)
         self.canTakePhoto = true  // 5秒後に再度写真撮影を有効化
     }
