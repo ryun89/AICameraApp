@@ -7,6 +7,9 @@ import Foundation
 class CameraViewModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBufferDelegate, AVCapturePhotoCaptureDelegate {
     @Published var canTakePhoto = true
     @Published var confidenceLabel: String = "smile: 0%"
+    @Published var capturedPhotos: [UIImage] = [] // 撮影した画像の配列
+    @Published var selectedPhoto: UIImage? // 選択された画像
+    @Published var isShowingPhotoViewer = false // フォトビューアーの表示フラグ
     
     var captureSession: AVCaptureSession?
     private var currentCamera: AVCaptureDevice.Position = .front
@@ -127,5 +130,6 @@ class CameraViewModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampl
         
         let image = UIImage(data: imageData)
         UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+        self.capturedPhotos.append(image!)
     }
     }
