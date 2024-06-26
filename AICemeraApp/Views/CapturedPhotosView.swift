@@ -13,7 +13,7 @@ struct CapturedPhotosView: View {
                         .frame(width: 100, height: 100)
                         .clipped()
                         .onTapGesture {
-                            viewModel.canTakePhoto = false
+                            viewModel.canTakePhoto = false // 撮影を中断するためにフラグにfalseを設定
                             viewModel.selectedPhoto = photo
                             viewModel.isShowingPhotoViewer.toggle()
                         }

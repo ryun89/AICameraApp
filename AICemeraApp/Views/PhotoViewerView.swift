@@ -22,6 +22,7 @@ struct PhotoViewerView: View {
             }
         }
         .onDisappear {
+            // 撮影を再開できるようにするためにフラグにtrueを設定
             viewModel.canTakePhoto = true
             
         }
