@@ -21,6 +21,14 @@ struct ContentView: View {
                 }
                 Spacer()
                 HStack{
+                    VStack {
+                        CapturedPhotosView(viewModel: cameraViewModel)
+                    }
+                    .sheet(isPresented: $cameraViewModel.isShowingPhotoViewer) {
+                        if let selectedPhoto = cameraViewModel.selectedPhoto {
+                            PhotoViewerView(image: selectedPhoto, viewModel: cameraViewModel)
+                        }
+                    }
                     Spacer()
                     Text(cameraViewModel.confidenceLabel)
                         .font(.largeTitle)
