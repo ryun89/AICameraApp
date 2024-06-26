@@ -85,7 +85,8 @@ class CameraViewModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampl
                         let labelText = "\(result.identifier): \(String(format: "%.2f", result.confidence * 100))%"
                         self.confidenceLabel = labelText
                     }
-                    if result.identifier == "smile" && result.confidence >= 0.99 && self.canTakePhoto {
+                    // 下記の条件を満たす時に撮影
+                    if result.identifier == "smile" && result.confidence >= 0.99 && self.canTakePhoto && !self.isShowingPhotoViewer {
                         Task {
                             await self.handleSmileDetect()
                         }
