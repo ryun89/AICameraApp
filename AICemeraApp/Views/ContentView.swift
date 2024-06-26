@@ -26,7 +26,7 @@ struct ContentView: View {
                     }
                     .sheet(isPresented: $cameraViewModel.isShowingPhotoViewer) {
                         if let selectedPhoto = cameraViewModel.selectedPhoto {
-                            PhotoViewerView(image: selectedPhoto)
+                            PhotoViewerView(image: selectedPhoto, viewModel: cameraViewModel)
                         }
                     }
                     Spacer()

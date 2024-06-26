@@ -1,10 +1,3 @@
-//
-//  CapturedPhotosView.swift
-//  AICemeraApp
-//
-//  Created by 八久響 on 2024/06/26.
-//
-
 import SwiftUI
 
 struct CapturedPhotosView: View {
@@ -20,6 +13,7 @@ struct CapturedPhotosView: View {
                         .frame(width: 100, height: 100)
                         .clipped()
                         .onTapGesture {
+                            viewModel.canTakePhoto = false
                             viewModel.selectedPhoto = photo
                             viewModel.isShowingPhotoViewer.toggle()
                         }
