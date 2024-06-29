@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		EE2127B92C2B74A000A627AE /* CapturedPhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2127B82C2B74A000A627AE /* CapturedPhotosView.swift */; };
 		EE2127BB2C2B763C00A627AE /* PhotoViewerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2127BA2C2B763C00A627AE /* PhotoViewerView.swift */; };
-		EE7DFC452BFCE6FC00348013 /* SmileClassifier_0521.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = EE7DFC442BFCE6FC00348013 /* SmileClassifier_0521.mlmodel */; };
 		EE857A0B2C0106B6001890F2 /* SmileClassifierModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE857A0A2C0106B6001890F2 /* SmileClassifierModel.swift */; };
 		EE857A0D2C010B89001890F2 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE857A0C2C010B89001890F2 /* CameraViewModel.swift */; };
+		EE88C9762C2FAABE00C46E9E /* SmileClassifier_0628_ver4.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = EE88C9752C2FAABE00C46E9E /* SmileClassifier_0628_ver4.mlmodel */; };
 		EEA170C72BF7B985000A5484 /* AICemeraAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA170C62BF7B985000A5484 /* AICemeraAppApp.swift */; };
 		EEA170C92BF7B985000A5484 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA170C82BF7B985000A5484 /* ContentView.swift */; };
 		EEA170CB2BF7B986000A5484 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEA170CA2BF7B986000A5484 /* Assets.xcassets */; };
@@ -22,10 +22,10 @@
 /* Begin PBXFileReference section */
 		EE2127B82C2B74A000A627AE /* CapturedPhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedPhotosView.swift; sourceTree = "<group>"; };
 		EE2127BA2C2B763C00A627AE /* PhotoViewerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerView.swift; sourceTree = "<group>"; };
-		EE7DFC442BFCE6FC00348013 /* SmileClassifier_0521.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SmileClassifier_0521.mlmodel; sourceTree = "<group>"; };
 		EE7EAF1E2BF892ED00D4A702 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE857A0A2C0106B6001890F2 /* SmileClassifierModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmileClassifierModel.swift; sourceTree = "<group>"; };
 		EE857A0C2C010B89001890F2 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		EE88C9752C2FAABE00C46E9E /* SmileClassifier_0628_ver4.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SmileClassifier_0628_ver4.mlmodel; sourceTree = "<group>"; };
 		EEA170C32BF7B985000A5484 /* AICemeraApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AICemeraApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEA170C62BF7B985000A5484 /* AICemeraAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICemeraAppApp.swift; sourceTree = "<group>"; };
 		EEA170C82BF7B985000A5484 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 			children = (
 				EE7EAF1E2BF892ED00D4A702 /* Info.plist */,
 				EEA170CA2BF7B986000A5484 /* Assets.xcassets */,
-				EE7DFC442BFCE6FC00348013 /* SmileClassifier_0521.mlmodel */,
+				EE88C9752C2FAABE00C46E9E /* SmileClassifier_0628_ver4.mlmodel */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -190,12 +190,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEA170D52BF7BA78000A5484 /* CemeraView.swift in Sources */,
-				EE7DFC452BFCE6FC00348013 /* SmileClassifier_0521.mlmodel in Sources */,
 				EEA170C92BF7B985000A5484 /* ContentView.swift in Sources */,
 				EEA170C72BF7B985000A5484 /* AICemeraAppApp.swift in Sources */,
 				EE2127B92C2B74A000A627AE /* CapturedPhotosView.swift in Sources */,
 				EE857A0B2C0106B6001890F2 /* SmileClassifierModel.swift in Sources */,
 				EE857A0D2C010B89001890F2 /* CameraViewModel.swift in Sources */,
+				EE88C9762C2FAABE00C46E9E /* SmileClassifier_0628_ver4.mlmodel in Sources */,
 				EE2127BB2C2B763C00A627AE /* PhotoViewerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,8 +339,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -371,8 +370,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

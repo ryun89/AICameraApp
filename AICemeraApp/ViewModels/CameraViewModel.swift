@@ -84,11 +84,13 @@ class CameraViewModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampl
                     Task { @MainActor in
                         let labelText = "\(result.identifier): \(String(format: "%.2f", result.confidence * 100))%"
                         self.confidenceLabel = labelText
-                    }
-                    // 下記の条件を満たす時に撮影
-                    if result.identifier == "smile" && result.confidence >= 0.99 && self.canTakePhoto && !self.isShowingPhotoViewer {
-                        Task {
-                            await self.handleSmileDetect()
+                        
+                        // 下記の条件を満たす時に撮影
+                        if result.identifier == "smile" && result.confidence >= 0.95 && self.canTakePhoto && !self.isShowingPhotoViewer {
+                            Task {
+                                self.canTakePhoto = false // 撮影を一時無効化
+                                await self.handleSmileDetect()
+                            }
                         }
                     }
                 }
@@ -102,7 +104,6 @@ class CameraViewModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampl
     // 笑顔認識を操作する
     @MainActor
     func handleSmileDetect() async {
-        self.canTakePhoto = false // 撮影を一時無効化
         self.capturePhoto() // 写真を保存する
         
         // 5秒のクールダウン
