@@ -7,7 +7,7 @@ class SmileClassifierModel {
     
     init() {
         let config = MLModelConfiguration()
-        let coreMLModel = try! SmileClassifier_0521(configuration: config)
+        let coreMLModel = try! SmileClassifier_0628_ver4(configuration: config)
         self.model = try! VNCoreMLModel(for: coreMLModel.model)
     }
     
