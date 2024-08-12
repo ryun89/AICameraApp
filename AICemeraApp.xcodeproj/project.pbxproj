@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		EE2127B92C2B74A000A627AE /* CapturedPhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2127B82C2B74A000A627AE /* CapturedPhotosView.swift */; };
 		EE2127BB2C2B763C00A627AE /* PhotoViewerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2127BA2C2B763C00A627AE /* PhotoViewerView.swift */; };
-		EE37769E2C673C5E006635D5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE37769D2C673C5E006635D5 /* HomeView.swift */; };
+		EE37769E2C673C5E006635D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE37769D2C673C5E006635D5 /* ContentView.swift */; };
 		EE857A0B2C0106B6001890F2 /* SmileClassifierModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE857A0A2C0106B6001890F2 /* SmileClassifierModel.swift */; };
 		EE857A0D2C010B89001890F2 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE857A0C2C010B89001890F2 /* CameraViewModel.swift */; };
 		EE88C9762C2FAABE00C46E9E /* SmileClassifier_0628_ver4.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = EE88C9752C2FAABE00C46E9E /* SmileClassifier_0628_ver4.mlmodel */; };
 		EEA170C72BF7B985000A5484 /* AICemeraAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA170C62BF7B985000A5484 /* AICemeraAppApp.swift */; };
-		EEA170C92BF7B985000A5484 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA170C82BF7B985000A5484 /* ContentView.swift */; };
+		EEA170C92BF7B985000A5484 /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA170C82BF7B985000A5484 /* CaptureView.swift */; };
 		EEA170CB2BF7B986000A5484 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEA170CA2BF7B986000A5484 /* Assets.xcassets */; };
 		EEA170CE2BF7B986000A5484 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEA170CD2BF7B986000A5484 /* Preview Assets.xcassets */; };
 		EEA170D52BF7BA78000A5484 /* CemeraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA170D42BF7BA78000A5484 /* CemeraView.swift */; };
@@ -23,14 +23,14 @@
 /* Begin PBXFileReference section */
 		EE2127B82C2B74A000A627AE /* CapturedPhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedPhotosView.swift; sourceTree = "<group>"; };
 		EE2127BA2C2B763C00A627AE /* PhotoViewerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerView.swift; sourceTree = "<group>"; };
-		EE37769D2C673C5E006635D5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; tabWidth = 14; usesTabs = 0; wrapsLines = 1; };
+		EE37769D2C673C5E006635D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 14; usesTabs = 0; wrapsLines = 1; };
 		EE7EAF1E2BF892ED00D4A702 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE857A0A2C0106B6001890F2 /* SmileClassifierModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmileClassifierModel.swift; sourceTree = "<group>"; };
 		EE857A0C2C010B89001890F2 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		EE88C9752C2FAABE00C46E9E /* SmileClassifier_0628_ver4.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SmileClassifier_0628_ver4.mlmodel; sourceTree = "<group>"; };
 		EEA170C32BF7B985000A5484 /* AICemeraApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AICemeraApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEA170C62BF7B985000A5484 /* AICemeraAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICemeraAppApp.swift; sourceTree = "<group>"; };
-		EEA170C82BF7B985000A5484 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EEA170C82BF7B985000A5484 /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
 		EEA170CA2BF7B986000A5484 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEA170CD2BF7B986000A5484 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EEA170D42BF7BA78000A5484 /* CemeraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CemeraView.swift; sourceTree = "<group>"; };
@@ -50,10 +50,10 @@
 		EE857A062C01019C001890F2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EEA170C82BF7B985000A5484 /* ContentView.swift */,
+				EEA170C82BF7B985000A5484 /* CaptureView.swift */,
 				EEA170D42BF7BA78000A5484 /* CemeraView.swift */,
 				EE2127B82C2B74A000A627AE /* CapturedPhotosView.swift */,
-				EE37769D2C673C5E006635D5 /* HomeView.swift */,
+				EE37769D2C673C5E006635D5 /* ContentView.swift */,
 				EE2127BA2C2B763C00A627AE /* PhotoViewerView.swift */,
 			);
 			path = Views;
@@ -192,9 +192,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE37769E2C673C5E006635D5 /* HomeView.swift in Sources */,
+				EE37769E2C673C5E006635D5 /* ContentView.swift in Sources */,
 				EEA170D52BF7BA78000A5484 /* CemeraView.swift in Sources */,
-				EEA170C92BF7B985000A5484 /* ContentView.swift in Sources */,
+				EEA170C92BF7B985000A5484 /* CaptureView.swift in Sources */,
 				EEA170C72BF7B985000A5484 /* AICemeraAppApp.swift in Sources */,
 				EE2127B92C2B74A000A627AE /* CapturedPhotosView.swift in Sources */,
 				EE857A0B2C0106B6001890F2 /* SmileClassifierModel.swift in Sources */,
