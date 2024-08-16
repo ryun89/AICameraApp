@@ -30,6 +30,7 @@ class CameraViewModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampl
         let videoCaptureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: currentCamera) ?? AVCaptureDevice.default(for: .video)
         guard let videoDevice = videoCaptureDevice, let videoInput = try? AVCaptureDeviceInput(device: videoDevice) else { return }
         
+        // 入力を追加
         if captureSession.canAddInput(videoInput) {
             captureSession.addInput(videoInput)
         }
@@ -76,6 +77,7 @@ class CameraViewModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampl
     func detectSmile(in sampleBuffer: CMSampleBuffer) {
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
+        // リクエストを作成
         let request = smileClassificaterModel.createRequest { [weak self] results in
             guard let self = self else { return }
             if let results = results {
@@ -86,7 +88,7 @@ class CameraViewModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampl
                         self.confidenceLabel = labelText
                         
                         // 下記の条件を満たす時に撮影
-                        if result.identifier == "smile" && result.confidence >= 0.95 && self.canTakePhoto && !self.isShowingPhotoViewer {
+                        if result.identifier == "smile" && result.confidence >= 0.97 && self.canTakePhoto && !self.isShowingPhotoViewer {
                             Task {
                                 self.canTakePhoto = false // 撮影を一時無効化
                                 await self.handleSmileDetect()
