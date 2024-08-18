@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EE1238E52C7047B400E5A0B0 /* AICemeraAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1238E42C7047B400E5A0B0 /* AICemeraAppTests.swift */; };
 		EE1238ED2C704F3300E5A0B0 /* SmileClassifierModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1238EC2C704F3300E5A0B0 /* SmileClassifierModelTests.swift */; };
+		EE1238F02C70542500E5A0B0 /* CameraViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1238EF2C70542500E5A0B0 /* CameraViewModelTests.swift */; };
 		EE2127B92C2B74A000A627AE /* CapturedPhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2127B82C2B74A000A627AE /* CapturedPhotosView.swift */; };
 		EE2127BB2C2B763C00A627AE /* PhotoViewerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2127BA2C2B763C00A627AE /* PhotoViewerView.swift */; };
 		EE37769E2C673C5E006635D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE37769D2C673C5E006635D5 /* ContentView.swift */; };
@@ -36,6 +37,7 @@
 		EE1238E22C7047B400E5A0B0 /* AICemeraAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AICemeraAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE1238E42C7047B400E5A0B0 /* AICemeraAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICemeraAppTests.swift; sourceTree = "<group>"; };
 		EE1238EC2C704F3300E5A0B0 /* SmileClassifierModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmileClassifierModelTests.swift; sourceTree = "<group>"; };
+		EE1238EF2C70542500E5A0B0 /* CameraViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModelTests.swift; sourceTree = "<group>"; };
 		EE2127B82C2B74A000A627AE /* CapturedPhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedPhotosView.swift; sourceTree = "<group>"; };
 		EE2127BA2C2B763C00A627AE /* PhotoViewerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerView.swift; sourceTree = "<group>"; };
 		EE37769D2C673C5E006635D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 14; usesTabs = 0; wrapsLines = 1; };
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				EE1238EB2C70483300E5A0B0 /* Models */,
+				EE1238EE2C70540300E5A0B0 /* ViewModels */,
 				EE1238E42C7047B400E5A0B0 /* AICemeraAppTests.swift */,
 			);
 			path = AICemeraAppTests;
@@ -84,6 +87,14 @@
 				EE1238EC2C704F3300E5A0B0 /* SmileClassifierModelTests.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		EE1238EE2C70540300E5A0B0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EE1238EF2C70542500E5A0B0 /* CameraViewModelTests.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		EE857A062C01019C001890F2 /* Views */ = {
@@ -265,6 +276,7 @@
 			files = (
 				EE1238E52C7047B400E5A0B0 /* AICemeraAppTests.swift in Sources */,
 				EE1238ED2C704F3300E5A0B0 /* SmileClassifierModelTests.swift in Sources */,
+				EE1238F02C70542500E5A0B0 /* CameraViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

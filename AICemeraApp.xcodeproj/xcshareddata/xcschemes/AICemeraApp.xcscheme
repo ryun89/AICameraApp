@@ -35,7 +35,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EEE030782C0314FA0050E389"
+               BlueprintIdentifier = "EE1238E12C7047B400E5A0B0"
                BuildableName = "AICemeraAppTests.xctest"
                BlueprintName = "AICemeraAppTests"
                ReferencedContainer = "container:AICemeraApp.xcodeproj">
